@@ -1,8 +1,5 @@
 # Workshop: Power Analysis and Sample Size Calculation
 
-Nora Wickelmaier  
-n.wickelmaier@iwm-tuebingen.de
-
 ## Schedule
 
 | Date       | Time        | Topic                                     |
