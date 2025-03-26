@@ -1,0 +1,26 @@
+Hosmer, D. & Lemeshow, S. (2000). Applied logistic regression. Second edition.
+New York: John Wiley & Sons.
+
+Code Sheet for the Variables in the Low Birth Weight Study
+Described in Section 1.6.2 Page 24
+
+Variable Description                 Codes/Value           Variable Name
+1        Identification Code         ID Number             id
+2        Low Birth Weight            1 = BWT <= 2500g,     low
+                                     0 = BWT > 2500g
+3        Age of Mother               Years                 age
+4        Weight of Mother at         Pounds                lwt
+         Last Menstrual Period
+5        Race                        1 = White, 2 = Black  race
+                                     3 = Other
+6        Smoking Status              0 = No, 1 = Yes       smoke
+         During Pregnancy
+7        History of Premature Labor  0 = None, 1 = One,    ptl
+                                     2 = Two, etc.
+8        History of Hypertension     0 = No, 1 = Yes       ht
+9        Presence of Uterine         0 = No, 1 = Yes       ui
+         Irritability
+10       Number of Physician Visits  0 = None, 1 = One     ftv
+         During the First Trimester  2 = Two, etc.
+11       Birth Weight                Grams                 bwt
+

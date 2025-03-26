@@ -1,0 +1,55 @@
+---
+title: "Power Analysis and Sample Size Calculation"
+author: "Nora Wickelmaier"
+date: "May, 5-6, 2025"
+bibliography: lit.bib
+link-citations: yes
+---
+
+## Schedule
+
+| Date      |Time        | Topic                            | Exercises                                 |
+|:----------|-----------:|:---------------------------------|:------------------------------------------|
+| 05.05.2025| 9:00-10:30 | [Introduction to power](01_intro/powersim-intro.pdf)             |[Binomial test](01_intro/exercises.html)|
+|           |11:00-12:30 | [Introduction to data simulation](02_datsim/datsim.html)         |[Data simulation](02_datsim/exercises.html)|
+|           |13:30-15:00 | [Power simulation for ANOVA models](03_anova/powersim-anova.html)|[Univariate t-test 1](03_anova/exercises-ttest1.html)|
+|           |15:30-17:00 | Exercises                                |[Univariate t-test 2](03_anova/exercises-ttest2.html), [Two-by-two ANOVA](03_anova/exercises-anova.html)|
+| 06.05.2025| 9:00-10:30 | [Power simulation for logistic regression](04_logit/powersim-logit.pdf)|[Logistic regression 1](04_logit/exercises-logit1.html)|
+|           |11:00-12:30 | Exercises                                |[Logistic regression 2](04_logit/exercises-logit2.html), [Logistic regression 3](04_logit/exercises-logit3.html)|
+|           |13:30-15:00 | [Power simulation for LMMs](05_lmm/intro-lmm.pdf)                |[Data simulation LMM](05_lmm/exercises-datsimlmm.html)|
+|           |15:30-17:00 | Exercises                                |[Power longitudinal data](05_lmm/exercises-pwrlmm.html), [Power crossed random design](05_lmm/exercises.html)|
+
+
+## Preparation
+
+### Background
+
+Read the brief introduction to simulation-based power analysis contained in
+@Wickelmaier22.
+
+### Installing R
+
+* You will need a current R version installed on your computer:
+  https://cran.r-project.org/
+
+* Additionally, it is useful to have a text editor installed that supports
+  syntax highlighting, e.g., Vim (https://www.vim.org/download.php) or
+  Notepad++ (https://notepad-plus-plus.org/downloads/)
+
+* Some people prefer more elaborate IDEs (instead of a simple text editor). Popular
+  choices are RStudio (https://posit.co/products/open-source/rstudio/) or Visual
+  Studio Code (https://code.visualstudio.com/download)
+
+### Additional packages
+
+* You will need one additional R package:
+  - lme4: https://CRAN.R-project.org/package=lme4
+
+* To install it, type this into your R console:
+
+```{r, eval=FALSE}
+install.packages("lme4")
+```
+
+### Reference
+
