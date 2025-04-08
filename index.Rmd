@@ -16,7 +16,7 @@ link-citations: yes
 |           |15:30-17:00 | Exercises                                |[Univariate t-test 2](03_anova/exercises-ttest2.html), [Two-by-two ANOVA](03_anova/exercises-anova.html)|
 | 06.05.2025| 9:00-10:30 | [Power simulation for logistic regression](04_logit/powersim-logit.pdf)|[Logistic regression 1](04_logit/exercises-logit1.html)|
 |           |11:00-12:30 | Exercises                                |[Logistic regression 2](04_logit/exercises-logit2.html), [Logistic regression 3](04_logit/exercises-logit3.html)|
-|           |13:30-15:00 | [Power simulation for LMMs](05_lmm/intro-lmm.pdf)                |[Data simulation LMM](05_lmm/exercises-datsimlmm.html)|
+|           |13:30-15:00 | [Power simulation for LMMs](05_lmm/intro-lmm.pdf)                |[Longitudinal data](05_lmm/lmm.html)|
 |           |15:30-17:00 | Exercises                                |[Power longitudinal data](05_lmm/exercises-pwrlmm.html), [Power crossed random design](05_lmm/exercises.html)|
 
 
