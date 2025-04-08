@@ -1,0 +1,57 @@
+# Reference: Kleinhenz et al., Pain 83 (1999) 235-241
+# Source: Vickers, A. J., & Altman, D. G., BMJ 323 (2001) 1123-1124 
+
+pre post  grp
+ 35   35 plac
+ 54   37 plac
+ 35   40 plac
+ 30   42 plac
+ 44   45 plac
+ 49   47 plac
+ 38   51 plac
+ 52   52 plac
+ 52   52 plac
+ 39   53 plac
+ 44   53 plac
+ 53   53 plac
+ 73   53 plac
+ 48   54 plac
+ 58   54 plac
+ 55   57 plac
+ 73   74 plac
+ 65   76 plac
+ 78   78 plac
+ 80   80 plac
+ 59   81 plac
+ 52   81 plac
+ 46   83 plac
+ 57   85 plac
+ 44   85 plac
+ 63   86 plac
+ 80   95 plac
+ 43   74  acu
+ 75   99  acu
+ 66   88  acu
+ 65   85  acu
+ 74  100  acu
+ 58   58  acu
+ 62   77  acu
+ 64  100  acu
+ 59   61  acu
+ 45   83  acu
+ 70   78  acu
+ 66  100  acu
+ 59  100  acu
+ 68   94  acu
+ 73   60  acu
+ 60   92  acu
+ 41   41  acu
+ 53   53  acu
+ 62   80  acu
+ 74   83  acu
+ 54   57  acu
+ 40   67  acu
+ 32   82  acu
+ 78   78  acu
+ 69  100  acu
+
