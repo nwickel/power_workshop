@@ -509,16 +509,16 @@ etc.)</li>
 distribution name is prefixed by “r” (random deviate). See
 <code>?Distributions</code> for a list of distributions.</p>
 <pre class="r"><code>rnorm(10)                # draw from standard normal distribution</code></pre>
-<pre><code>##  [1] -0.3185467 -1.3580007  0.3434175 -1.3386706 -1.2852332 -0.2100537  1.1053338 -1.9696963
-##  [9] -1.2556229  1.5537085</code></pre>
+<pre><code>##  [1] -0.2581995 -0.5077745 -0.1767552  3.1260476  1.0540232 -0.1105289
+##  [7] -0.8216009  2.3567335  0.9402052  0.6400295</code></pre>
 <pre class="r"><code>runif(10)                # draw from uniform distribution</code></pre>
-<pre><code>##  [1] 0.7569819 0.7295467 0.7728889 0.7177976 0.2054151 0.9423134 0.7836676 0.8166168
-##  [9] 0.4545782 0.1419451</code></pre>
+<pre><code>##  [1] 0.61698604 0.24742617 0.99947945 0.84593144 0.73980077 0.26581549
+##  [7] 0.19136864 0.35824179 0.07662775 0.12614906</code></pre>
 <pre class="r"><code>rpois(10, lambda = 1)    # draw from Poisson distribution</code></pre>
-<pre><code>##  [1] 1 1 0 1 3 0 1 1 3 0</code></pre>
+<pre><code>##  [1] 1 2 3 1 0 2 1 0 3 2</code></pre>
 <pre class="r"><code># Sampling with or without replacement from a vector
 sample(1:5, size = 10, replace = TRUE)</code></pre>
-<pre><code>##  [1] 5 3 2 1 1 2 5 1 1 5</code></pre>
+<pre><code>##  [1] 4 2 1 4 2 1 2 5 4 4</code></pre>
 <p>The random numbers generator in R is seeded: Upon restart of R, new
 random numbers are generated. To replicate the results of a simulation,
 the seed (starting value) can be set explicitly:</p>
@@ -607,15 +607,16 @@ be a factor (e.g., id variables).</p>
 <pre class="r"><code>sex &lt;- factor(rep(c(&quot;male&quot;, &quot;female&quot;), c(15, 20)),
               levels = c(&quot;male&quot;, &quot;female&quot;, &quot;diverse&quot;))
 sex</code></pre>
-<pre><code>##  [1] male   male   male   male   male   male   male   male   male   male   male   male  
-## [13] male   male   male   female female female female female female female female female
-## [25] female female female female female female female female female female female
+<pre><code>##  [1] male   male   male   male   male   male   male   male   male   male  
+## [11] male   male   male   male   male   female female female female female
+## [21] female female female female female female female female female female
+## [31] female female female female female
 ## Levels: male female diverse</code></pre>
 <pre class="r"><code>condition &lt;- factor(rep(1:2, 20), levels = 1:2, labels = c(&quot;real&quot;, &quot;VR&quot;))
 condition</code></pre>
-<pre><code>##  [1] real VR   real VR   real VR   real VR   real VR   real VR   real VR   real VR   real
-## [18] VR   real VR   real VR   real VR   real VR   real VR   real VR   real VR   real VR  
-## [35] real VR   real VR   real VR  
+<pre><code>##  [1] real VR   real VR   real VR   real VR   real VR   real VR   real VR   real
+## [16] VR   real VR   real VR   real VR   real VR   real VR   real VR   real VR  
+## [31] real VR   real VR   real VR   real VR   real VR  
 ## Levels: real VR</code></pre>
 <pre class="r"><code>group &lt;- factor(rep(c(&quot;ctr&quot;, &quot;trt1&quot;, &quot;trt2&quot;), each = 5))
 group</code></pre>
@@ -757,14 +758,22 @@ colMeans(datw[, -1])</code></pre>
 <pre><code>##   resp.0   resp.1   resp.2   resp.3   resp.4   resp.5   resp.6 
 ## 1.034856 1.648281 2.334861 2.732789 3.600051 3.842304 5.031247</code></pre>
 <pre class="r"><code>cor(datw[, -1])</code></pre>
-<pre><code>##             resp.0     resp.1      resp.2      resp.3     resp.4      resp.5      resp.6
-## resp.0  1.00000000 -0.1515961  0.09738831 -0.32935371 -0.3494126  0.05470633 -0.23307043
-## resp.1 -0.15159614  1.0000000  0.54631105  0.12950803 -0.2360399  0.38303961  0.32874890
-## resp.2  0.09738831  0.5463110  1.00000000 -0.04246943 -0.3037968  0.05777371  0.12258577
-## resp.3 -0.32935371  0.1295080 -0.04246943  1.00000000  0.1153210  0.13318325  0.09966404
-## resp.4 -0.34941260 -0.2360399 -0.30379682  0.11532103  1.0000000 -0.42137211 -0.20102584
-## resp.5  0.05470633  0.3830396  0.05777371  0.13318325 -0.4213721  1.00000000  0.15399528
-## resp.6 -0.23307043  0.3287489  0.12258577  0.09966404 -0.2010258  0.15399528  1.00000000</code></pre>
+<pre><code>##             resp.0     resp.1      resp.2      resp.3     resp.4      resp.5
+## resp.0  1.00000000 -0.1515961  0.09738831 -0.32935371 -0.3494126  0.05470633
+## resp.1 -0.15159614  1.0000000  0.54631105  0.12950803 -0.2360399  0.38303961
+## resp.2  0.09738831  0.5463110  1.00000000 -0.04246943 -0.3037968  0.05777371
+## resp.3 -0.32935371  0.1295080 -0.04246943  1.00000000  0.1153210  0.13318325
+## resp.4 -0.34941260 -0.2360399 -0.30379682  0.11532103  1.0000000 -0.42137211
+## resp.5  0.05470633  0.3830396  0.05777371  0.13318325 -0.4213721  1.00000000
+## resp.6 -0.23307043  0.3287489  0.12258577  0.09966404 -0.2010258  0.15399528
+##             resp.6
+## resp.0 -0.23307043
+## resp.1  0.32874890
+## resp.2  0.12258577
+## resp.3  0.09966404
+## resp.4 -0.20102584
+## resp.5  0.15399528
+## resp.6  1.00000000</code></pre>
 </div>
 <div id="simulate-repeatedly" class="section level1">
 <h1>Simulate repeatedly</h1>
@@ -779,16 +788,16 @@ colMeans(datw[, -1])</code></pre>
 <pre class="r"><code>set.seed(1133)
 replicate(3, rnorm(10), simplify = FALSE)</code></pre>
 <pre><code>## [[1]]
-##  [1]  1.3234050  1.0672355 -0.4970425 -0.7444275  0.1860472  1.0540061  0.9051997  0.5745372
-##  [9]  2.0237698  0.1831237
+##  [1]  1.3234050  1.0672355 -0.4970425 -0.7444275  0.1860472  1.0540061
+##  [7]  0.9051997  0.5745372  2.0237698  0.1831237
 ## 
 ## [[2]]
-##  [1]  0.25400660 -0.71355882  1.44786556  0.90886066 -2.02238191  0.27064121 -0.97261079
-##  [8]  0.01889436  2.08511877 -0.88604130
+##  [1]  0.25400660 -0.71355882  1.44786556  0.90886066 -2.02238191  0.27064121
+##  [7] -0.97261079  0.01889436  2.08511877 -0.88604130
 ## 
 ## [[3]]
-##  [1]  0.3268653  1.4123795 -0.4843307  2.5777461  0.2671252 -0.9092667 -2.3162740  0.9670641
-##  [9] -1.5804482  0.3733937</code></pre>
+##  [1]  0.3268653  1.4123795 -0.4843307  2.5777461  0.2671252 -0.9092667
+##  [7] -2.3162740  0.9670641 -1.5804482  0.3733937</code></pre>
 <pre class="r"><code>set.seed(1133)
 replicate(3, rnorm(10))</code></pre>
 <pre><code>##             [,1]        [,2]       [,3]
@@ -813,16 +822,16 @@ for(i in 1:3) {
 }
 l1</code></pre>
 <pre><code>## [[1]]
-##  [1] -1.4462982 -1.0249066  1.7273781  0.7970825 -0.1921147  0.2560200  0.7947771 -0.4665010
-##  [9]  0.5127336 -0.4892820
+##  [1] -1.4462982 -1.0249066  1.7273781  0.7970825 -0.1921147  0.2560200
+##  [7]  0.7947771 -0.4665010  0.5127336 -0.4892820
 ## 
 ## [[2]]
-##  [1]  1.873255506 -0.450625527 -1.060191680 -0.410976388 -0.631345739 -0.646261755
-##  [7] -0.347821457  0.002526977 -1.474943882 -0.903203170
+##  [1]  1.873255506 -0.450625527 -1.060191680 -0.410976388 -0.631345739
+##  [6] -0.646261755 -0.347821457  0.002526977 -1.474943882 -0.903203170
 ## 
 ## [[3]]
-##  [1] -0.5318484 -0.9318605  0.6605868 -1.3563084 -1.4592700 -0.3774795  0.1023129 -0.2826929
-##  [9] -0.4166077  0.1255623</code></pre>
+##  [1] -0.5318484 -0.9318605  0.6605868 -1.3563084 -1.4592700 -0.3774795
+##  [7]  0.1023129 -0.2826929 -0.4166077  0.1255623</code></pre>
 <pre class="r"><code>## Grow a matrix
 mat &lt;- NULL
 
