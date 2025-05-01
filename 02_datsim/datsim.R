@@ -1,7 +1,7 @@
 #' ---
 #' title: "Data simulation in R"
 #' author: ""
-#' date: "Last modified: 2025-03-24"
+#' date: "Last modified: 2025-05-01"
 #' bibliography: ../lit.bib
 #' ---
 
@@ -9,7 +9,7 @@
 #' In this session, we will use R to simulate data sets. Simulating data can be
 #' considered as the key idea behind hypothesis testing in the frequentist
 #' framework, where we assume that we can repeat the data collection under
-#' identical conditions. In this course, we will (hopefully) show you how to
+#' identical conditions. In this course, I will (hopefully) show you how to
 #' use it to draw meaningful conclusions from your data.
 #' 
 
@@ -114,10 +114,9 @@ mean(pval < 0.05)
 
 #' # Creating factors
 #'
-#' We already looked at how to create factors in the first session today. It is
-#' usually good practice to create categorical variables explicitly as factors.
-#' Everything that is not a numeric variable should be a factor (e.g., id
-#' variables).
+#' It is usually good practice to create categorical variables explicitly as
+#' factors. Everything that is not a numeric variable should be a factor (e.g.,
+#' id variables).
 
 sex <- factor(rep(c("male", "female"), c(15, 20)),
               levels = c("male", "female", "diverse"))
@@ -161,7 +160,7 @@ n <- 20
 # A and B are recycled to match the length of id
 datsim <- data.frame(id = factor(rep(1:n, each = 4)),
                      A = factor(rep(c("a1", "a2"), each = 2)),
-                     B = factor(rep(c("b1", "b2"))))
+                     B = factor(rep(c("b1", "b2"), times = 2)))
 
 xtabs( ~ A + B, datsim)
 xtabs( ~ id + A + B, datsim) |> ftable()
@@ -179,7 +178,7 @@ datsim2 <- expand.grid(id = id, A = A, B = B) |> sort_by(~ id + A)
 #' `reshape()`.
 
 datl <- data.frame(id = factor(rep(1:n, each = 7)),
-                   time = 0:6,
+                   time = rep(0:6, times = n),
                    resp = rnorm(n * 7,
                                 mean = seq(1, 5, length.out = 7), # seven means
                                 sd = 1))
@@ -233,7 +232,7 @@ mat
 
 data_sets <- replicate(20, {
   data.frame(id = factor(1:15),
-             group = c("ctr", "trt1", "trt2"),
+             group = rep(c("ctr", "trt1", "trt2"), times = 5),
              resp = rnorm(5 * 3,
                           mean = c(1, 3, 5), # three means
                           sd = 1))

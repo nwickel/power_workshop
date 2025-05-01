@@ -1,7 +1,7 @@
 #' ---
 #' title: "Two-by-two ANOVA and t-tests"
 #' author: ""
-#' date: "Last modified: 2025-03-25"
+#' date: "Last modified: 2025-05-01"
 #' ---
 
 #' # Univariate t-test
@@ -136,9 +136,9 @@ set.seed(1704)
 n <- 96
 dat <- data.frame(
   A = factor(rep(1:2, each = n/2), labels = c("low", "high")),
-  B = factor(rep(rep(1:2, each = n/4), 2), labels = c("low", "high"))
+  B = factor(rep(rep(1:2, each = n/4), times = 2), labels = c("low", "high"))
 )
-X <- model.matrix(~ A*B, dat)
+X <- model.matrix(~ A * B, dat)
 unique(X)
 beta <- c(mu = 30, a2 = 30, b2 = 5, ab22 = 12)
 means <- X %*% beta
@@ -151,7 +151,7 @@ lattice::xyplot(I(means + rnorm(n, sd = 10)) ~ A, dat, groups = B,
 #+ cache = TRUE
 out <- replicate(2000, {
   y <- means + rnorm(n, sd = 10)   # y = mu + a + b + ab + e
-  m <- aov(y ~ A*B, dat)
+  m <- aov(y ~ A * B, dat)
   c(coef(m), sigma = sigma(m))
 })
 boxplot(t(out))
@@ -161,7 +161,7 @@ boxplot(t(out))
 #+ cache = TRUE
 pval <- replicate(2000, {
   y <- means + rnorm(n, sd = 10)
-  m <- aov(y ~ A*B, dat)
+  m <- aov(y ~ A * B, dat)
   summary(m)[[1]]$"Pr(>F)"[3]      # test of interaction
 })
 mean(pval < 0.05)
