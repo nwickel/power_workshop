@@ -509,16 +509,16 @@ etc.)</li>
 distribution name is prefixed by “r” (random deviate). See
 <code>?Distributions</code> for a list of distributions.</p>
 <pre class="r"><code>rnorm(10)                # draw from standard normal distribution</code></pre>
-<pre><code>##  [1] -0.8252526046  0.4811679937  0.4177439741  0.6288014658  1.6462687539 -0.9092435270
-##  [7] -0.8306017377  0.2204404060 -0.0006471606 -0.6693271562</code></pre>
+<pre><code>##  [1]  0.60923738  0.84613250  1.31113120 -0.70918047  0.05607319  1.07675536  0.06186195
+##  [8]  0.24859883  0.68234327 -0.52112590</code></pre>
 <pre class="r"><code>runif(10)                # draw from uniform distribution</code></pre>
-<pre><code>##  [1] 0.41115645 0.16214231 0.90435143 0.39531592 0.14061642 0.01744174 0.55038977 0.44574147
-##  [9] 0.14075074 0.21426815</code></pre>
+<pre><code>##  [1] 0.99829048 0.88049136 0.27490503 0.40887039 0.86652929 0.32749332 0.08564070 0.49776288
+##  [9] 0.14396136 0.07330983</code></pre>
 <pre class="r"><code>rpois(10, lambda = 1)    # draw from Poisson distribution</code></pre>
-<pre><code>##  [1] 0 2 3 3 1 1 0 0 0 1</code></pre>
+<pre><code>##  [1] 0 0 1 2 1 3 1 1 1 0</code></pre>
 <pre class="r"><code># Sampling with or without replacement from a vector
 sample(1:5, size = 10, replace = TRUE)</code></pre>
-<pre><code>##  [1] 2 1 5 3 1 2 1 3 4 1</code></pre>
+<pre><code>##  [1] 1 2 3 3 4 5 5 5 5 5</code></pre>
 <p>The random numbers generator in R is seeded: Upon restart of R, new
 random numbers are generated. To replicate the results of a simulation,
 the seed (starting value) can be set explicitly:</p>
