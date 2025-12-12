@@ -1,4 +1,4 @@
-# Workshop: Power Analysis and Sample Size Calculation
+# Workshop at ZPID: Power Analysis and Sample Size Calculation
 
 ## Schedule
 
